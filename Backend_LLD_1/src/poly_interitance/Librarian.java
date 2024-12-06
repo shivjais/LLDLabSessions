@@ -3,17 +3,14 @@ package poly_interitance;
 public class Librarian extends User{
     private String employeeNumber;
 
-    public String getEmployeeNumber() {
-        return employeeNumber;
-    }
-
-    public void setEmployeeNumber(String employeeNumber) {
+    public Librarian(String name, String contactInfo, String employeeNumber){
+        super(name,contactInfo);
         this.employeeNumber = employeeNumber;
     }
 
     @Override
     void displayDashboard() {
-        System.out.println(getEmployeeNumber());
+        System.out.println(employeeNumber);
     }
 
     @Override
