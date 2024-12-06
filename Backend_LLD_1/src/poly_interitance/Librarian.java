@@ -10,7 +10,8 @@ public class Librarian extends User{
 
     @Override
     void displayDashboard() {
-        System.out.println(employeeNumber);
+        System.out.println("Librarian Dashboard");
+        System.out.println("Employee Number :"+employeeNumber);
     }
 
     @Override
