@@ -1,4 +1,4 @@
-package poly_interitance;
+package LibraryMgmtSystem;
 
 public interface Lendable {
     boolean lend(User user);

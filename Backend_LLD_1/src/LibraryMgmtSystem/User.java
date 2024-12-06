@@ -1,4 +1,4 @@
-package poly_interitance;
+package LibraryMgmtSystem;
 
 public abstract class User {
     private String userId;

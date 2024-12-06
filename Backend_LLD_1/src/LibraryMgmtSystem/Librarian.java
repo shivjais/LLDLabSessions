@@ -1,4 +1,4 @@
-package poly_interitance;
+package LibraryMgmtSystem;
 
 public class Librarian extends User{
     private String employeeNumber;

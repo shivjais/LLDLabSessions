@@ -1,4 +1,4 @@
-package poly_interitance;
+package LibraryMgmtSystem;
 
 public class Member extends User{
     private int borrowedBooksCount;

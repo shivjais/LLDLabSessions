@@ -1,4 +1,4 @@
-package poly_interitance;
+package LibraryMgmtSystem;
 
 public class NovelBook extends Book{
     private String genre;
