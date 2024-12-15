@@ -1,4 +1,4 @@
-package IntroToMultiThreading;
+package IntroToMultiThreading.HelloWorldPrinter;
 
 public class Client {
     public static void main(String[] args) {
