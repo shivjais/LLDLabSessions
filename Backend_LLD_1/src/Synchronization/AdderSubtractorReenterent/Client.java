@@ -6,9 +6,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.locks.ReentrantLock;
 
-//This is example of synchronisation issue
+//here we have synchronisation issue
 //because we are using same shared resource in two thread
-//we will fix this using synchronized block/method
+//we will fix this using ReentrantLock
 public class Client {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Value value = new Value();
