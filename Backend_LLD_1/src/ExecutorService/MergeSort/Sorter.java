@@ -8,23 +8,25 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class Sorter implements Callable<List<Integer>> {
-    List<Integer> sortList;
+    private List<Integer> sortList;
+    private ExecutorService executorService;
 
-    public Sorter(List<Integer> list){
+    public Sorter(List<Integer> list, ExecutorService executorService){
         this.sortList = list;
+        this.executorService = executorService;
     }
     @Override
     public List<Integer> call() throws Exception {
-        if(null == sortList || sortList.size() == 1){
+        if(sortList.size() <= 1){
             return sortList;
         }
         int mid = sortList.size()/2;
-        ExecutorService executors = Executors.newCachedThreadPool();
+
         //Sort left & right array in separate thread
-        Sorter leftSorter = new Sorter(sortList.subList(0,mid));
-        Sorter rightSorter = new Sorter(sortList.subList(mid,sortList.size()));
-        Future<List<Integer>> leftFuture = executors.submit(leftSorter);
-        Future<List<Integer>> rightFuture = executors.submit(rightSorter);
+        Sorter leftSorter = new Sorter(sortList.subList(0,mid),executorService);
+        Sorter rightSorter = new Sorter(sortList.subList(mid,sortList.size()),executorService);
+        Future<List<Integer>> leftFuture = executorService.submit(leftSorter);
+        Future<List<Integer>> rightFuture = executorService.submit(rightSorter);
 
         //here one thread (left or right) will wait until another thread will complete its task
         List<Integer> leftSortedList = leftFuture.get();
