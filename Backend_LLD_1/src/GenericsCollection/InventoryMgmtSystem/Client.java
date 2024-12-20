@@ -31,5 +31,15 @@ public class Client {
         System.out.println("Books: "+bookInventory.getItem("B003"));
         clothingInventory.removeItem("C001");
         System.out.println("All clothing: "+clothingInventory.getAllItems());
+
+        RecentlyViewedItems recentlyViewedItems = new RecentlyViewedItems();
+
+
+        OrderProcessor orderProcessor = new OrderProcessor();
+        orderProcessor.addOrder(new Order("O001", false));
+        orderProcessor.addOrder(new Order("O002", true));
+        orderProcessor.addOrder(new Order("O003", false));
+        orderProcessor.addOrder(new Order("O004", true));
+        orderProcessor.processOrders();
     }
 }
