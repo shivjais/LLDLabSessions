@@ -1,10 +1,9 @@
-package GenericsCollection.InventoryMgmtSystem.M2;
+package GenericsCollection.InventoryMgmtSystem;
 
 import GenericsCollection.InventoryMgmtSystem.M1.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Inventory<T extends Item> {
     private HashMap<String, T> items;

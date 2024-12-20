@@ -1,4 +1,4 @@
-package GenericsCollection.InventoryMgmtSystem.M2;
+package GenericsCollection.InventoryMgmtSystem;
 
 import GenericsCollection.InventoryMgmtSystem.M1.Book;
 import GenericsCollection.InventoryMgmtSystem.M1.Clothing;
