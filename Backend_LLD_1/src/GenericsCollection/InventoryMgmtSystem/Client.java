@@ -9,7 +9,7 @@ public class Client {
         Book book1 = new Book("B001", "Java Programming", 100, 10, "James Gosling");
         Book book2 = new Book("B002", "Python Programming", 200, 20, "Guido van Rossum");
         Clothing clothing1 = new Clothing("C001", "T-Shirt", 50, 5, "M");
-        Clothing clothing2 = new Clothing("C002", "Jeans", 150, 15, "32");
+        Clothing clothing2 = new Clothing("C002", "Jeans", 150, 0, "32");
         Electronics electronics1 = new Electronics("E001", "Laptop", 500, 2, 1);
         Electronics electronics2 = new Electronics("E002", "Mobile", 300, 3, 2);
         List<Item> items = new ArrayList<>(List.of(book1, book2, clothing1, clothing2, electronics1, electronics2));
@@ -41,5 +41,38 @@ public class Client {
         orderProcessor.addOrder(new Order("O003", false));
         orderProcessor.addOrder(new Order("O004", true));
         orderProcessor.processOrders();
+
+        Inventory<Item> inventory = new Inventory<>();
+        inventory.addItem(book1);
+        inventory.addItem(book2);
+        inventory.addItem(clothing1);
+        inventory.addItem(clothing2);
+        inventory.addItem(electronics1);
+
+        List<Item> sortByPrice = inventory.sortInventory(new ItemPriceComparator());
+        System.out.println("Sorted by price:");
+        for(Item item: sortByPrice){
+            System.out.println("Item: "+item.getName()+" Price: "+item.getPrice());
+        }
+        List<Item> sortByQuantity =inventory.sortInventory(new ItemQuantityComparator());
+        System.out.println("Sorted by quantity:");
+        for(Item item: sortByQuantity){
+            System.out.println(item);
+            System.out.println("Item: "+item.getName()+" Quantity: "+item.getQuantity());
+        }
+
+        List<Item> affordableItems = inventory.filterByPriceRange(50, 100);
+        System.out.println("affordableItems:");
+        for(Item item: affordableItems){
+            System.out.println("Item: "+item.getName()+" Price: "+item.getPrice());
+        }
+
+        List<Item> availableItems = inventory.filterByAvailability();
+        System.out.println("availableItems:");
+        for(Item item: availableItems){
+            System.out.println("Item: "+item.getName()+" Quantity: "+item.getQuantity());
+        }
     }
+
+
 }
