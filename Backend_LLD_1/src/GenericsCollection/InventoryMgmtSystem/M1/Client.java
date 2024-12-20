@@ -1,4 +1,4 @@
-package GenericsCollection.InventoryMgmtSystem;
+package GenericsCollection.InventoryMgmtSystem.M1;
 
 import java.util.ArrayList;
 import java.util.Collections;

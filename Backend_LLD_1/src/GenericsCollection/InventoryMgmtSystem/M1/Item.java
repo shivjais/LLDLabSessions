@@ -1,4 +1,4 @@
-package GenericsCollection.InventoryMgmtSystem;
+package GenericsCollection.InventoryMgmtSystem.M1;
 
 public class Item implements Comparable<Item> {
     private String id;

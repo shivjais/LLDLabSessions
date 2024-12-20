@@ -1,4 +1,4 @@
-package GenericsCollection.InventoryMgmtSystem;
+package GenericsCollection.InventoryMgmtSystem.M1;
 
 public class Book extends Item{
     private String author;

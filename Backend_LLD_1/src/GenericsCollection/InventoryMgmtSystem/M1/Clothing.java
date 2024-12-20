@@ -1,4 +1,4 @@
-package GenericsCollection.InventoryMgmtSystem;
+package GenericsCollection.InventoryMgmtSystem.M1;
 
 public class Clothing extends Item{
     private String size;
