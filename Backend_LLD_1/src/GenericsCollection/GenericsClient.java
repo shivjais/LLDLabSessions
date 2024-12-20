@@ -1,4 +1,4 @@
-package Generics;
+package GenericsCollection;
 
 public class GenericsClient {
     public static void main(String[] args) {

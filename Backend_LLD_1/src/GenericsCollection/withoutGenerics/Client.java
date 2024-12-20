@@ -1,4 +1,4 @@
-package Generics.withoutGenerics;
+package GenericsCollection.withoutGenerics;
 
 public class Client {
     public static void main(String[] args) {

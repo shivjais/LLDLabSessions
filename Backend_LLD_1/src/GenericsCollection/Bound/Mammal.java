@@ -1,4 +1,4 @@
-package Generics.Bound;
+package GenericsCollection.Bound;
 
 public class Mammal extends Animal{
     private int noFleges;

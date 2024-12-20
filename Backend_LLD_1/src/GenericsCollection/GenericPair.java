@@ -1,4 +1,4 @@
-package Generics;
+package GenericsCollection;
 
 public class GenericPair <T,V>{
     T first;

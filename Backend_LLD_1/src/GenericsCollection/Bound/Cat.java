@@ -1,4 +1,4 @@
-package Generics.Bound;
+package GenericsCollection.Bound;
 
 public class Cat extends Mammal{
     private int age;

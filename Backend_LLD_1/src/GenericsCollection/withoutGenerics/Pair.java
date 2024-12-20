@@ -1,4 +1,4 @@
-package Generics.withoutGenerics;
+package GenericsCollection.withoutGenerics;
 
 public class Pair {
     private Object first;

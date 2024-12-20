@@ -1,4 +1,4 @@
-package Generics;
+package GenericsCollection;
 
 import java.util.List;
 

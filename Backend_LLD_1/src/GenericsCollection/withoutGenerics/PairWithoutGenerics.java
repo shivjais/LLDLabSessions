@@ -1,4 +1,4 @@
-package Generics.withoutGenerics;
+package GenericsCollection.withoutGenerics;
 
 //A non-generic class can have generic method as well
 public class PairWithoutGenerics {
