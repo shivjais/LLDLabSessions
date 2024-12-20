@@ -11,6 +11,10 @@ public class Inventory<T extends Item> {
     }
 
     public void addItem(T item) {
+        if(items.containsKey(item.getId())){
+            System.out.println("Item already exists: "+item.getId());
+            return;
+        }
         items.put(item.getId(), item);
     }
     public void removeItem(String id) {
@@ -22,6 +26,10 @@ public class Inventory<T extends Item> {
     }
 
     public T getItem(String id) {
+        if(!items.containsKey(id)){
+            System.out.println("Item not found: "+id);
+            return null;
+        }
         return items.get(id);
     }
     public ArrayList<T> getAllItems() {
