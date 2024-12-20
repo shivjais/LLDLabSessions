@@ -42,6 +42,7 @@ public class Client {
         orderProcessor.addOrder(new Order("O004", true));
         orderProcessor.processOrders();
 
+        //Sorting & filtering
         Inventory<Item> inventory = new Inventory<>();
         inventory.addItem(book1);
         inventory.addItem(book2);
@@ -61,6 +62,7 @@ public class Client {
             System.out.println("Item: "+item.getName()+" Quantity: "+item.getQuantity());
         }
 
+        //Filtering
         List<Item> affordableItems = inventory.filterByPriceRange(50, 100);
         System.out.println("affordableItems:");
         for(Item item: affordableItems){
@@ -72,6 +74,26 @@ public class Client {
         for(Item item: availableItems){
             System.out.println("Item: "+item.getName()+" Quantity: "+item.getQuantity());
         }
+
+        //Adding unique item to wishlist
+        CustomerWishlist<Item> wishlist = new CustomerWishlist<>();
+        Book book3 = new Book("B003", "Book3", 50.0, 50, "Author3");
+        Electronics electronics3 = new Electronics("E003", "Tablet", 200, 5, 3);
+        Clothing clothing3 = new Clothing("C003", "Shirt", 30, 10, "M");
+        Book book4 = new Book("B003", "Book4", 40.0, 20, "Author4");
+
+        wishlist.addToWishlist(book3);
+        wishlist.addToWishlist(book1);
+        wishlist.addToWishlist(electronics3);
+        wishlist.addToWishlist(clothing3);
+        //adding duplicate item
+        wishlist.addToWishlist(book4);
+        System.out.println("Wishlist items:");
+        wishlist.displayWishlistItems();
+        wishlist.removeFromWishlist(book4);
+        System.out.println("Wishlist items after removing book4:");
+        wishlist.displayWishlistItems();
+
     }
 
 
