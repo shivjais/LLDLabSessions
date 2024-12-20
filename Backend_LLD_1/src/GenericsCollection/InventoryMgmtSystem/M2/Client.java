@@ -22,6 +22,6 @@ public class Client {
         bookInventory.addItem(new Book("5", "Book3", 50.0, 50, "Author3"));
         System.out.println("All books: "+bookInventory.getAllItems());
         bookInventory.addItem(new Book("5", "Book4", 50.0, 50, "Author3"));
-        System.out.println("All books: "+bookInventory.getAllItems());
+        System.out.println("Books: "+bookInventory.getItem("5"));
     }
 }

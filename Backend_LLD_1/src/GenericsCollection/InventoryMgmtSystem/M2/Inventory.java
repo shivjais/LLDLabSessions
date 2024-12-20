@@ -19,7 +19,7 @@ public class Inventory<T extends Item> {
         items.remove(id);
     }
 
-    public T getItems(String id) {
+    public T getItem(String id) {
         return items.get(id);
     }
     public Map<String,T> getAllItems() {
