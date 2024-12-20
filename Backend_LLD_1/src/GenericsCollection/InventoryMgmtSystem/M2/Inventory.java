@@ -16,6 +16,10 @@ public class Inventory<T extends Item> {
         items.put(item.getId(), item);
     }
     public void removeItem(String id) {
+        if(!items.containsKey(id)){
+            System.out.println("Item not found: "+id);
+            return;
+        }
         items.remove(id);
     }
 

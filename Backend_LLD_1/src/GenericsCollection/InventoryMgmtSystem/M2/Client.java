@@ -23,5 +23,7 @@ public class Client {
         System.out.println("All books: "+bookInventory.getAllItems());
         bookInventory.addItem(new Book("5", "Book4", 50.0, 50, "Author3"));
         System.out.println("Books: "+bookInventory.getItem("5"));
+        clothingInventory.removeItem("4");
+        System.out.println("All clothing: "+clothingInventory.getAllItems());
     }
 }
