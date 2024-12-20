@@ -1,7 +1,5 @@
 package GenericsCollection.InventoryMgmtSystem;
 
-import GenericsCollection.InventoryMgmtSystem.M1.Item;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 

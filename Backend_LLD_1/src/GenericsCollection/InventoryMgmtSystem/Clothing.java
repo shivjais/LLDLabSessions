@@ -1,6 +1,6 @@
-package GenericsCollection.InventoryMgmtSystem.M1;
+package GenericsCollection.InventoryMgmtSystem;
 
-public class Clothing extends Item{
+public class Clothing extends Item {
     private String size;
 
 

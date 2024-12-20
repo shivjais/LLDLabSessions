@@ -1,6 +1,6 @@
-package GenericsCollection.InventoryMgmtSystem.M1;
+package GenericsCollection.InventoryMgmtSystem;
 
-public class Book extends Item{
+public class Book extends Item {
     private String author;
 
     public Book(String id, String name, double price, int quantity, String author) {

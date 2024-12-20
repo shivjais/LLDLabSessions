@@ -1,4 +1,4 @@
-package GenericsCollection.InventoryMgmtSystem.M1;
+package GenericsCollection.InventoryMgmtSystem;
 
 public class Electronics extends Item implements Comparable<Item> {
     private   int warranty;
