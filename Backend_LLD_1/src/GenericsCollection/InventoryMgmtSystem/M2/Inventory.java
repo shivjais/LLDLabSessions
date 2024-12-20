@@ -2,6 +2,7 @@ package GenericsCollection.InventoryMgmtSystem.M2;
 
 import GenericsCollection.InventoryMgmtSystem.M1.Item;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class Inventory<T extends Item> {
     public T getItem(String id) {
         return items.get(id);
     }
-    public Map<String,T> getAllItems() {
-        return items;
+    public ArrayList<T> getAllItems() {
+        return new ArrayList<>(items.values());
     }
 }
