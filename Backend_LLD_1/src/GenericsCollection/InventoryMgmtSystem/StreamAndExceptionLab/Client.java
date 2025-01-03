@@ -60,5 +60,33 @@ public class Client {
                 .limit(5)
                 .collect(Collectors.toList());
         System.out.println("Filtered, sorted, distinct, limited to 5 items: "+list);
+
+        //Calculate the total quantity of all items in the inventory
+        Integer totalQuantity = allItems.stream()
+                .map(Item::getQuantity)
+                //.reduce(0, (totalSum, qty) -> totalSum + qty)
+                .reduce(0, Integer::sum);
+        System.out.println("Total quantity of all items: "+totalQuantity);
+
+
+        //Find the most expensive item using reduce
+        allItems.stream()
+                .reduce((item1, item2) -> item1.getPrice() > item2.getPrice() ? item1 : item2)
+                .ifPresent(item -> System.out.println("Most expensive item: "+item.getName()));
+
+        //Concatenate all item names into a single comma-separated string
+        //using Collectors.joining
+        String names = allItems.stream()
+                .map(Item::getName)
+                .collect(Collectors.joining(", "));
+        System.out.println("All item names: "+names);
+
+        //Concatenate using reduce
+        String names2 = allItems.stream()
+                .map(Item::getName)
+                .reduce((name1, name2) -> name1 + ", " + name2)
+                .get();
+        System.out.println("All item names using reduce: "+names2);
+
     }
 }
