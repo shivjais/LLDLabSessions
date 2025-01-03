@@ -45,5 +45,20 @@ public class Client {
         //Confirm that no item has a negative quantity using noneMatch
         boolean isNoItemNegative = allItems.stream().noneMatch(item -> item.getQuantity() < 0);
         System.out.println("Are no items negative: "+isNoItemNegative);
+
+        //Filter items with a price greater than 1000 and a quantity greater than 0 (available stock).
+        //Extract only the names of these items.
+        //Remove duplicate names (if any).
+        //Sort the names in alphabetical order.
+        //Limit the result to the top 5 names.
+        //Collect the final list into a List<String> and print it.
+        List<String> list = allItems.stream()
+                .filter(item -> item.getPrice() > 1000 && item.getQuantity() > 0)
+                .map(Item::getName)
+                .distinct()
+                .sorted(String::compareTo)
+                .limit(5)
+                .collect(Collectors.toList());
+        System.out.println("Filtered, sorted, distinct, limited to 5 items: "+list);
     }
 }
