@@ -1,11 +1,13 @@
 package GenericsCollection.InventoryMgmtSystem;
 
+import GenericsCollection.InventoryMgmtSystem.StreamAndExceptionLab.InvalidQuantityException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidQuantityException {
         Book book1 = new Book("B001", "Java Programming", 100, 10, "James Gosling");
         Book book2 = new Book("B002", "Python Programming", 200, 20, "Guido van Rossum");
         Clothing clothing1 = new Clothing("C001", "T-Shirt", 50, 5, "M");

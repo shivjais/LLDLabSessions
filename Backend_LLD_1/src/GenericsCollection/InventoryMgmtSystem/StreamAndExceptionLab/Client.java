@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidQuantityException {
 
         Inventory<Item> inventory = new Inventory<>();
         inventory.addItem(new Item("1", "Item1", 100, 10));

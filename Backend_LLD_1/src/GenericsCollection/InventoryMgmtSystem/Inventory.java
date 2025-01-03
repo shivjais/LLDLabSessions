@@ -1,5 +1,9 @@
 package GenericsCollection.InventoryMgmtSystem;
 
+import GenericsCollection.InventoryMgmtSystem.StreamAndExceptionLab.DuplicateItemException;
+import GenericsCollection.InventoryMgmtSystem.StreamAndExceptionLab.InvalidQuantityException;
+import GenericsCollection.InventoryMgmtSystem.StreamAndExceptionLab.ItemNotFoundException;
+
 import java.util.*;
 
 public class Inventory<T extends Item> {
@@ -9,25 +13,25 @@ public class Inventory<T extends Item> {
         items = new HashMap<>();
     }
 
-    public void addItem(T item) {
+    public void addItem(T item) throws InvalidQuantityException {
         if(items.containsKey(item.getId())){
-            System.out.println("Item already exists: "+item.getId());
-            return;
+            throw new DuplicateItemException("Item already exists: "+item.getId());
+        }
+        if(item.getQuantity() < 0){
+            throw new InvalidQuantityException("Invalid quantity: "+item.getQuantity());
         }
         items.put(item.getId(), item);
     }
     public void removeItem(String id) {
         if(!items.containsKey(id)){
-            System.out.println("Item not found: "+id);
-            return;
+            throw new ItemNotFoundException("Item not found: "+id);
         }
         items.remove(id);
     }
 
     public T getItem(String id) {
         if(!items.containsKey(id)){
-            System.out.println("Item not found: "+id);
-            return null;
+            throw new ItemNotFoundException("Item not found: "+id);
         }
         return items.get(id);
     }
